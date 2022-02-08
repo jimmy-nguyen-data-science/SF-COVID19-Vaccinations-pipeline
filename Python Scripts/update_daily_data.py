@@ -5,8 +5,7 @@ from google.cloud import storage
 from google.cloud import bigquery
 from google.oauth2 import service_account
 
-# import python functions
-import upload_starting_data
+
 
 
 def main():
@@ -97,6 +96,7 @@ def get_current_data(clean_data):
     return latest_data
 
 
+
 def append_data_into_bigquery_table(latest):
     '''
     Load latest data into Google's BigQuery table
@@ -108,11 +108,9 @@ def append_data_into_bigquery_table(latest):
 
     '''
 
-    # load credentials
-    credentials = service_account.Credentials.from_service_account_file("python-datasf.json")
 
     # Start bigquery client
-    client = bigquery.Client(credentials= credentials)
+    client = bigquery.Client.from_service_account_json('python-datasf.json')
     
     # specify data set
     data_set = 'sf_covid19_vaccinations'
@@ -125,6 +123,10 @@ def append_data_into_bigquery_table(latest):
 
     # Configurations for appending a row
     job_config = bigquery.LoadJobConfig()
+    job_config.write_disposition = 'WRITE_APPEND'
+    job_config.source_format = bigquery.SourceFormat.CSV
+    job_config.autodetect = True
+    job_config.ignore_unknown_values = True
 
     # load dataframe into table
     load_job = client.load_table_from_dataframe(latest, table_ref, job_config=job_config)
