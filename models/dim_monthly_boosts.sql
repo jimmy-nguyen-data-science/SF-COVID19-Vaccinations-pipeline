@@ -1,34 +1,23 @@
-WITH dates AS (
+WITH month_date AS (
     SELECT
-        date_administered,
-        EXTRACT(
-            MONTH
-            FROM
-                date_administered
-        ) AS month,
-        EXTRACT(
-            YEAR
-            FROM
-                date_administered
-        ) AS year
+        *
     FROM
-        `ads-507-final-project-340820.sf_covid19_vaccinations.daily-data`
+        { { ref('stg_month_year') } }
 ),
-boost_recip AS (
+new_boost_recip AS (
     SELECT
-        date_administered,
-        new_booster_recipients
+        *
     FROM
-        `ads-507-final-project-340820.sf_covid19_vaccinations.daily-data`
+        { { ref('stg_boost_recip') } }
 ),
 final as (
     SELECT
-        year, 
+        year,
         month,
-        sum(boost_recip.new_booster_recipients) AS total_booster_recipients
+        sum(new_boost_recip.new_booster_recipients) AS total_booster_recipients
     FROM
-        dates
-        INNER JOIN boost_recip using(date_administered)
+        month_date
+        INNER JOIN new_boost_recip using(date_administered)
     GROUP BY
         year,
         month
