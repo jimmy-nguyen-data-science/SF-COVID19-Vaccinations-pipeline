@@ -3,7 +3,7 @@ WITH new_boost_recip AS (
         date_administered,
         new_booster_recipients
     FROM
-        `ads-507-final-project-340820.sf_covid19_vaccinations.daily-data`
+        {{ source('sf_covid19_vaccinations', 'daily-data')}}
 )
 SELECT
     *

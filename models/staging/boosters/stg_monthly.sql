@@ -12,7 +12,7 @@ WITH month_year AS (
                 date_administered
         ) AS year
     FROM
-        `ads-507-final-project-340820.sf_covid19_vaccinations.daily-data`
+         {{ source('sf_covid19_vaccinations', 'daily-data')}}
 )
 SELECT
     *
