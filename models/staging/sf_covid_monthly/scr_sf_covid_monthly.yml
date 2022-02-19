@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-    - name: sf_vocid_monthly
+    - name: sf_covid19_monthly
       database: ads-507-final-project-340820
       schema: sf_covid19_vaccinations
       tables: 

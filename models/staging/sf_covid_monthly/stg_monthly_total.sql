@@ -9,7 +9,7 @@ with mth_tot as (
     sum(new_recipients) tot_new_recipients 
   from 
     {{ source(
-      'sf_vocid_monthly', 'daily-data'
+      'sf_covid19_monthly', 'daily-data'
     ) }} 
   group by 
     adm_year, 
