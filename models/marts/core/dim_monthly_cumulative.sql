@@ -2,7 +2,7 @@ with cumulative_monthly as(
     select
       *
     from
-      {{ ref('stg_monthly')}}
+      {{ ref('stg_monthly_cumulative')}}
 ),
 cumulative_series_monthly as (
     select
