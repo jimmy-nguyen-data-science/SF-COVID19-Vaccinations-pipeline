@@ -3,7 +3,7 @@ WITH new_boost_recip AS (
         date_administered,
         new_booster_recipients
     FROM
-        {{ source('sf_covid19_vaccinations', 'daily-data')}}
+        {{ source('sf_covid19_boosters', 'daily-data')}}
 )
 SELECT
     *

@@ -1,20 +1,11 @@
-WITH month_year AS (
+WITH date AS (
     SELECT
-        date_administered,
-        EXTRACT(
-            MONTH
-            FROM
-                date_administered
-        ) AS month,
-        EXTRACT(
-            YEAR
-            FROM
-                date_administered
-        ) AS year
+       format_datetime("%Y-%m",date_administered) yearmonth,
+       new_booster_recipients
     FROM
-         {{ source('sf_covid19_vaccinations', 'daily-data')}}
+         {{ ref('stg_boost_recip') }}
 )
 SELECT
     *
 FROM
-    month_year
+    date
