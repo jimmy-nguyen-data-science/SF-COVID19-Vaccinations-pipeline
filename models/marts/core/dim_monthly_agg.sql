@@ -21,3 +21,4 @@ select
   * 
 from 
   final
+  ORDER BY yearmonth

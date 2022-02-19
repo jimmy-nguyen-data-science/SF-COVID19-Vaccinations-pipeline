@@ -1,7 +1,6 @@
 with mth_avg as (
   SELECT 
-    FORMAT_DATETIME("%Y", date_administered) adm_year, 
-    FORMAT_DATETIME("%m", date_administered) adm_month, 
+    format_datetime("%Y-%m",date_administered) yearmonth,
     round(
       avg(new_1st_doses), 
       0
@@ -27,11 +26,9 @@ with mth_avg as (
       'sf_covid19_monthly', 'daily-data'
     ) }} 
   group by 
-    adm_year, 
-    adm_month 
+    yearmonth
   order by 
-    adm_year, 
-    adm_month desc
+   yearmonth
 ) 
 select 
   * 
