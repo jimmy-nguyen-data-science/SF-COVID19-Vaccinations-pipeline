@@ -8,7 +8,7 @@ select
     sum(cumulative_single_doses/nullif(cumulative_recipients,0) ) tot_prec_single,
 from
   {{ source(
-    'sf_covid19_vaccinations', 'daily-data'
+    'sf_covid19_cumulative', 'daily-data'
 ) }} 
 group by yearmonth
 order by yearmonth desc

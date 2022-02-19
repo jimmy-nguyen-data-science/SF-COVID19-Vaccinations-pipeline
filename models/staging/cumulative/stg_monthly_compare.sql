@@ -6,7 +6,7 @@ select
     sum(CUMULATIVE_1ST_DOSES - CUMULATIVE_2ND_DOSES) diff_1st_2nd
 from
   {{ source(
-    'sf_covid19_vaccinations', 'daily-data'
+    'sf_covid19_cumulative', 'daily-data'
 ) }} 
 group by yearmonth
 order by yearmonth desc
