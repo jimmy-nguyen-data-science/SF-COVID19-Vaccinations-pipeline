@@ -2,13 +2,13 @@ with cumulative_monthly as(
   select
     *
   from
-    { { ref('stg_monthly_cumulative') } }
+    {{ ref('stg_monthly_cumulative') }}
 ),
 cumulative_series_monthly as (
   select
     *
   from
-    { { ref('stg_monthly_compare') } }
+    {{ ref('stg_monthly_compare') }}
 ),
 final as(
   select

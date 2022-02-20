@@ -11,7 +11,7 @@ with cumulative_monthly as (
       cumulative_single_doses / nullif(cumulative_recipients, 0)
     ) tot_prec_single,
   from
-    { { source('sf_covid19_cumulative', 'daily-data') } }
+    {{ source('sf_covid19_cumulative', 'daily-data') }}
   group by
     yearmonth
   order by
