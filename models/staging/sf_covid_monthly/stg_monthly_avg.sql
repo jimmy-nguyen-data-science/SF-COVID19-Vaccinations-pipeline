@@ -10,7 +10,7 @@ with mth_avg as (
     ) avg_new_series_completed,
     round(avg(new_recipients), 0) avg_new_recipients
   from
-    { { source('sf_covid19_monthly', 'daily-data') } }
+    {{ source('sf_covid19_monthly', 'daily-data') }}
   group by
     yearmonth
   order by

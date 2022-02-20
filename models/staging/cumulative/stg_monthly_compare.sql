@@ -5,7 +5,7 @@ with cumulative_series_monthly as (
     sum(CUMULATIVE_2ND_DOSES) CUMULATIVE_2ND_DOSES_monthly,
     sum(CUMULATIVE_1ST_DOSES - CUMULATIVE_2ND_DOSES) diff_1st_2nd
   from
-    { { source('sf_covid19_cumulative', 'daily-data') } }
+    {{ source('sf_covid19_cumulative', 'daily-data') }}
   group by
     yearmonth
   order by

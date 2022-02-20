@@ -2,13 +2,13 @@ with mth_tot as (
   select
     *
   from
-    { { ref('stg_monthly_total') } }
+    {{ ref('stg_monthly_total') }}
 ),
 mth_avg as (
   select
     *
   from
-    { { ref('stg_monthly_avg') } }
+    {{ ref('stg_monthly_avg') }}
 ),
 final as (
   select
