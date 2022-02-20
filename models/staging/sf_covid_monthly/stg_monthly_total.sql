@@ -7,7 +7,7 @@ with mth_tot as (
     sum(new_series_completed) tot_new_series_completed,
     sum(new_recipients) tot_new_recipients
   from
-    { { source('sf_covid19_monthly', 'daily-data') } }
+    {{ source('sf_covid19_monthly', 'daily-data') }}
   group by
     yearmonth
   order by

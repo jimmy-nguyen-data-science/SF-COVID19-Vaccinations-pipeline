@@ -2,7 +2,7 @@ WITH month_year AS (
     SELECT
         *
     FROM
-        { { ref('stg_monthly') } }
+        {{ ref('stg_monthly') }}
 ),
 final as (
     SELECT
