@@ -3,3 +3,4 @@ target/
 dbt_packages/
 logs/
 Python Scripts/python-datasf.json
+.vscode/settings.json
