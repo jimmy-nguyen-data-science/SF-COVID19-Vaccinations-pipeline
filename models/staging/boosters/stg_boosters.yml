@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_boost_recip
+    columns: 
+      - name: date_administered
+        tests:
+          - unique
+          - not_null
+  - name: stg_monthly
+    columns: 
+      - name: yearmonth
+        tests:
+          - not_null
