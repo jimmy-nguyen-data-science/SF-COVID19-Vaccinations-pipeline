@@ -4,7 +4,8 @@ WITH month_year AS (
     FROM
         {{ ref('stg_monthly') }}
 ),
-final as (
+
+final AS (
     SELECT
         yearmonth,
         sum(new_booster_recipients) AS total_booster_recipients
@@ -13,6 +14,7 @@ final as (
     GROUP BY
         yearmonth
 )
+
 SELECT
     *
 FROM

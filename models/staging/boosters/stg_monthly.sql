@@ -1,10 +1,11 @@
 WITH date AS (
     SELECT
-        format_datetime("%Y-%m", date_administered) yearmonth,
-        new_booster_recipients
+        new_booster_recipients,
+        format_datetime("%Y-%m", date_administered) AS yearmonth
     FROM
         {{ ref('stg_boost_recip') }}
 )
+
 SELECT
     *
 FROM
