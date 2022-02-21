@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_monthly_avg
+    columns: 
+      - name: yearmonth
+        tests:
+          - unique
+          - not_null
+  - name: stg_monthly_total
+    columns: 
+      - name: yearmonth
+        tests:
+          - not_null
+          - unique
