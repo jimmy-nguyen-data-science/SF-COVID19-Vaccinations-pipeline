@@ -5,6 +5,7 @@ WITH new_boost_recip AS (
     FROM
         {{ source('sf_covid19_boosters', 'daily-data') }}
 )
+
 SELECT
     *
 FROM
