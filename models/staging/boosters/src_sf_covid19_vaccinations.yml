@@ -6,3 +6,8 @@ sources:
     schema: sf_covid19_vaccinations
     tables:
       - name: daily-data
+        columns:
+          - name: date_administered
+            tests:
+              - unique
+              - not_null
