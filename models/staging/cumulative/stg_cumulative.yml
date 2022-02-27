@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_monthly_cumulative
+    columns: 
+      - name: yearmonth
+        tests:
+          - unique
+          - not_null
+  - name: stg_monthly_compare
+    columns: 
+      - name: yearmonth
+        tests:
+          - not_null
+          - unique
