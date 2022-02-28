@@ -140,3 +140,18 @@ Build an automated ELT data pipeline using Python, Google's Cloud Services such 
 2. Error reporting sends notifications such as emails or texts about failures for services in the pipeline - also gives a quick report/dashboard of the type of errors detected and the level of severity 
 3. Cloud Monitoring displays reports or dashboards about the resources used from each service in order to maximize performance or reduce costs for unused services.
 
+
+## References 
+CDC Museum COVID-19 Timeline. (2022, January 5). Centers for Disease Control and 
+Prevention. 
+https://www.cdc.gov/museum/timeline/covid19.html#:%7E:text=January%2020%2C%202020%20CDC,18%20in%20Washington%20state 
+
+DataSF. (2021, February 11). COVID vaccinations given to SF residents over time. 
+Retrieved February 25, 2022, from 
+https://data.sfgov.org/COVID-19/COVID-Vaccinations-Given-to-SF-Residents-Over-Time/bqge-2y7k
+
+U.S. Food and Drug Administration. (2021, August 23). FDA Approves First 
+COVID-19 Vaccine. U.S. Food and Drug Administration. 
+https://www.fda.gov/news-events/press-announcements/fda-approves-first-covid-19-vaccine 
+
+
