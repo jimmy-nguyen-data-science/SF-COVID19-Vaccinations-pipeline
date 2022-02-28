@@ -94,11 +94,20 @@ Build an automated ELT data pipeline using Python, Google's Cloud Services such 
 ## Final Output
 
 ![](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/main/final%20output/Final%20Output%20as%20Dashboard.png)
+![View live dashboard here](https://datastudio.google.com/reporting/0688f974-82b0-4835-b60d-e534a070e275)
 
 ## Triggering the Pipeline
 
 - The pipeline is trigged on a scheduled nightly run at 11:50 P.M. PST using Google Cloud Scheduler service
 - dbt is also configured for a scheduled run of a handful of commands at 11:59 P.M. PST every night to clean and transform incoming new raw data and update existing tables in _BigQuery_
+
+## Database/Data Store/ Data Warehouse
+
+- Google data warehouse _BigQuery_
+
+## SQL Data Transformation Tools
+
+dbt
 
 ## Linters
 
