@@ -12,7 +12,8 @@ Build an automated ELT data pipeline using Python, Google's Cloud Services such 
 
 ## Data Set
 
-San Francisco's daily data on COVID-19 vaccinations
+![San Francisco's daily data on COVID-19 vaccinations](https://data.sfgov.org/COVID-19/COVID-Vaccinations-Given-to-SF-Residents-Over-Time/bqge-2y7k)
+
 
 ## Design Document
 
@@ -80,6 +81,7 @@ San Francisco's daily data on COVID-19 vaccinations
 ### Tests
 
 - Test for staging files where all data should be non-negatives and any data less than zero will throw an error during the command _dbt test_ 
+- Tests are configured to run on a daily schedule with dbt 
 
 ![DBT run tests part 1](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/development-yi/tests/DBT%20run%20pass(1).png)
 ![DBT run tests part 2](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/development-yi/tests/DBT%20run%20pass(2).png)
@@ -93,5 +95,33 @@ San Francisco's daily data on COVID-19 vaccinations
 
 ![](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/main/final%20output/Final%20Output%20as%20Dashboard.png)
 
+## Triggering the Pipeline
 
+- The pipeline is trigged on a scheduled nightly run at 11:50 P.M. PST using Google Cloud Scheduler service
+
+## Linters
+
+- SQLFluff was installed as a extension on Microsoft Visual Studio Code when writing SQL queries
+
+##  How to deploy pipeline (Manually Set-up)
+
+1. Create an account with Google Cloud 
+2. Create an account with dbt 
+3. Create a virtual environment with Python or Conda and install the dependencies inside the file: Python Scripts > environment.yml or requirements.txt 
+4. Run python script: _upload_starting_data.py"
+5. Configure Google Cloud Scheduler to run everyday at 11:50 P.M. PST - this will send out a pub/sub message with the trigger topic: _new_data
+6. Paste the following environment and code on Google Cloud Functions: Python Scripts > update_daily_data.py and requirements.txt 
+7. Set up Secruity and Authentication by adding access and admin privleges to users 
+8. The Python script update_daily_data.py will be deploy on Google Cloud Functions daily appending new rows to an existing table called _daily-data_ on Google data warehouse _Big Query_
+9. Set up automated connectors between BigQuery API and dbt 
+10. Create staging models for light transformations on raw data 
+11. Create tests for incoming raw data
+12. Finalize documentation and schedule daily runs to materialize clean updated data as dimensional table back to _BigQuery_ as new tables
+13. Launch Google Data Studio and import data directly from BigQuery to create dashboards 
+
+
+## How to Monitor Data Pipeline 
+1. Two Google Cloud Services: Error Reporting and Cloud Monitoring
+2. Error reporting sends notifications such as emails or texts about failures for services in the pipeline - also gives a quick report/dashboard of the type of errors detected and the level of severity 
+3. Cloud Monitoring displays reports or dashboards about the resources used from each service in order to maximize performance or reduce costs for unused services.
 
