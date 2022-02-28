@@ -98,6 +98,7 @@ Build an automated ELT data pipeline using Python, Google's Cloud Services such 
 ## Triggering the Pipeline
 
 - The pipeline is trigged on a scheduled nightly run at 11:50 P.M. PST using Google Cloud Scheduler service
+- dbt is also configured for a scheduled run of a handful of commands at 11:59 P.M. PST every night to clean and transform incoming new raw data and update existing tables in _BigQuery_
 
 ## Linters
 
