@@ -103,11 +103,11 @@ Build an automated ELT data pipeline using Python, Google's Cloud Services such 
 
 ## Database/Data Store/ Data Warehouse
 
-- Google data warehouse _BigQuery_
+- ![Google data warehouse BigQuery](https://cloud.google.com/bigquery)
 
 ## SQL Data Transformation Tools
 
-dbt
+- ![dbt](https://www.getdbt.com/)
 
 ## Linters
 
