@@ -43,8 +43,11 @@ San Francisco's daily data on COVID-19 vaccinations
 ### - Architecture_diagrams
 
 - Create architecture diagram for data pipeline
-- Convert sample diagram to png
-- Finalize first architecture diagram draft
+- Finalize architecture diagram draft as png
+
+
+### - Final output 
+- Final output is a PDF file of a dashboard created by Google's Data Studio Service 
 
 ### - Macros
 
@@ -78,5 +81,17 @@ San Francisco's daily data on COVID-19 vaccinations
 
 - Test for staging files where all data should be non-negatives and any data less than zero will throw an error during the command _dbt test_ 
 
-- ![DBT run tests part 1](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/development-yi/tests/DBT%20run%20pass(1).png)
-- ![DBT run tests part 2](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/development-yi/tests/DBT%20run%20pass(2).png)
+![DBT run tests part 1](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/development-yi/tests/DBT%20run%20pass(1).png)
+![DBT run tests part 2](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/development-yi/tests/DBT%20run%20pass(2).png)
+
+
+## Architecture Diagram 
+
+![](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/main/architecture_diagrams/final_draft_01.png)
+
+## Final Output
+
+![](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/main/final%20output/Final%20Output%20as%20Dashboard.png)
+
+
+
