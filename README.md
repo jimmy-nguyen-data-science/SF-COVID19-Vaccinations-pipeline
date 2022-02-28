@@ -17,7 +17,7 @@ Build an automated ELT data pipeline using Python, Google's Cloud Services such 
 
 ## Design Document
 
-![The design document illustrates the data pipeline in detail](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/main/Team%205%20Design%20Document%20-%20Data%20Pipeline%20for%20San%20Francisco%20COVID-19%20Vaccinations.pdf)
+![The design document illustrates the data pipeline in detail](https://github.com/jimmy-nguyen-data-science/SF-COVID19-Vaccinations-pipeline/blob/main/Final-Project-Report-Team-5.pdf)
 
 ## Code Review
 
